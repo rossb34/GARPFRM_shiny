@@ -7,6 +7,7 @@
 
 library(shiny)
 library(GARPFRM)
+library(rugarch)
 data(crsp_weekly)
 
 # Define server logic required to summarize and view the selected dataset
