@@ -7,6 +7,10 @@
 
 library(shiny)
 library(PortfolioAnalytics)
+library(ROI)
+library(ROI.plugin.quadprog)
+library(ROI.plugin.glpk)
+library(foreach)
 
 data(edhec)
 load("crsp.short.rda")
@@ -99,7 +103,7 @@ shinyServer(function(input, output) {
   })
   
   output$efWeightsPlot <- renderPlot({
-    chart.Weights.EF(portf(), match.col="StdDev", colorset=bluemono)
+    chart.EF.Weights(portf(), match.col="StdDev", colorset=bluemono)
   })
   
   # Show all available data
